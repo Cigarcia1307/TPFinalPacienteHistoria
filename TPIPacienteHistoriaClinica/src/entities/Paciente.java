@@ -25,7 +25,7 @@ public class Paciente {
     
     //constructor completo
 
-    public Paciente(Long id, String nombre, String apellido, String dni, LocalDate fechaNacimiento, Boolean eliminado, HistoriaClinica historiaClinia) {
+    public Paciente(Long id, String nombre, String apellido, String dni, LocalDate fechaNacimiento, Boolean eliminado, HistoriaClinica historiaClinica) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -88,7 +88,7 @@ public class Paciente {
         return historiaClinica;
     }
 
-    public void setHistoriaClinia(HistoriaClinica historiaClinica) {
+    public void setHistoriaClinica(HistoriaClinica historiaClinica) {
         this.historiaClinica = historiaClinica;
     }
     //toString
@@ -116,10 +116,4 @@ public class Paciente {
          
          
      }
-    
-    
-    
-    
-    
-    
 }

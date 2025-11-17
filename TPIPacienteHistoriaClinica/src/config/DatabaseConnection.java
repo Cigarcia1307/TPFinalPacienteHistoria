@@ -8,7 +8,7 @@ public class DatabaseConnection {
 
     private static final String URL = "jdbc:mysql://localhost:3306/bdpacientehistoriaclinica";
     private static final String USER = "root";
-    private static final String PASSWORD = "root721"; // Cambiar según tu usuario
+    private static final String PASSWORD = "root"; // Cambiar según tu usuario
 
     // Obtener conexión
     public static Connection getConnection() {

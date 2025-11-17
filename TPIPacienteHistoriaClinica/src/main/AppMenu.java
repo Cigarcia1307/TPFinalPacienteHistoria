@@ -60,38 +60,37 @@ public class AppMenu {
     }
 
     private void crearPaciente() throws Exception {
-        System.out.println("\n--- CREAR PACIENTE ---");
-        System.out.print("ID paciente: ");
-        Long id = Long.parseLong(sc.nextLine());
-        System.out.print("Nombre: ");
-        String nombre = sc.nextLine();
-        System.out.print("Apellido: ");
-        String apellido = sc.nextLine();
-        System.out.print("DNI: ");
-        String dni = sc.nextLine();
-        System.out.print("Fecha de nacimiento (yyyy-MM-dd): ");
-        LocalDate fecha;
-        try {
-            fecha = LocalDate.parse(sc.nextLine());
-        } catch (DateTimeParseException e) {
-            System.out.println("Formato de fecha inválido.");
-            return;
-        }
+    System.out.println("\n--- CREAR PACIENTE ---");
+    System.out.print("Nombre: ");
+    String nombre = sc.nextLine();
+    System.out.print("Apellido: ");
+    String apellido = sc.nextLine();
+    System.out.print("DNI: ");
+    String dni = sc.nextLine();
+    System.out.print("Fecha de nacimiento (yyyy-MM-dd): ");
+    LocalDate fecha;
+    try {
+        fecha = LocalDate.parse(sc.nextLine());
+    } catch (DateTimeParseException e) {
+        System.out.println("Formato de fecha inválido.");
+        return;
+    }
 
-        System.out.println("\n--- CREAR HISTORIA CLÍNICA ---");
-        System.out.print("ID historia clínica: ");
-        Long idHc = Long.parseLong(sc.nextLine());
-        System.out.print("Número de historia: ");
-        String nroHistoria = sc.nextLine();
+    System.out.println("\n--- CREAR HISTORIA CLÍNICA ---");
+    System.out.println("Se generará automáticamente el número de historia clínica.");
+
+    GrupoSanguineo grupo = null;
+    while (grupo == null) {
         System.out.print("Grupo sanguíneo (A+, A-, B+, B-, AB+, AB-, O+, O-): ");
-        GrupoSanguineo grupo;
+        String input = sc.nextLine().trim().toUpperCase();
+        input = input.replace("+", "_POSITIVO").replace("-", "_NEGATIVO");
         try {
-            grupo = GrupoSanguineo.valueOf(sc.nextLine().toUpperCase()
-                    .replace("+", "_POSITIVO").replace("-", "_NEGATIVO"));
+            grupo = GrupoSanguineo.valueOf(input);
         } catch (IllegalArgumentException e) {
-            System.out.println("Grupo sanguíneo inválido.");
-            return;
+            System.out.println("Grupo sanguíneo inválido. Intente nuevamente.");
         }
+    }
+
         System.out.print("Antecedentes: ");
         String antecedentes = sc.nextLine();
         System.out.print("Medicación actual: ");
@@ -99,12 +98,15 @@ public class AppMenu {
         System.out.print("Observaciones: ");
         String observaciones = sc.nextLine();
 
-        HistoriaClinica hc = new HistoriaClinica(idHc, nroHistoria, antecedentes, medicacion, observaciones, false, grupo);
-        Paciente p = new Paciente(id, nombre, apellido, dni, fecha, false, hc);
+        // NO seteamos nroHistoria; se generará en el DAO
+        HistoriaClinica hc = new HistoriaClinica(0L, null, antecedentes, medicacion, observaciones, false, grupo);
+        Paciente p = new Paciente(0L, nombre, apellido, dni, fecha, false, hc);
 
         pacienteService.insertar(p);
         System.out.println("Paciente creado con éxito!");
     }
+
+
 
     private void leerPacientePorId() throws Exception {
         System.out.print("\nIngrese ID del paciente: ");

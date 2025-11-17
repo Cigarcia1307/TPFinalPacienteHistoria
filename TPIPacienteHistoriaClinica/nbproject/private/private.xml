@@ -3,10 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/daian/Desktop/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/main/TPIPacienteHistoriaClinica.java</file>
-            <file>file:/C:/Users/daian/Desktop/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/dao/PacienteDao.java</file>
-            <file>file:/C:/Users/daian/Desktop/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/entities/Paciente.java</file>
-            <file>file:/C:/Users/daian/Desktop/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/main/AppMenu.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/config/DatabaseConnection.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/Service/GenericService.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/Service/HistoriaClinicaService.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/Service/PacienteService.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/dao/GenericDao.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/dao/HistoriaClinicaDao.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/dao/PacienteDao.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/entities/GrupoSanguineo.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/entities/HistoriaClinica.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/entities/Paciente.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/main/AppMenu.java</file>
+            <file>file:/C:/UTN/1er%20Año/Segundo%20Cuatrimestre/Programacion%202/TPI/TPI/TPFinalPacienteHistoria/TPIPacienteHistoriaClinica/src/main/TPIPacienteHistoriaClinica.java</file>
         </group>
     </open-files>
 </project-private>

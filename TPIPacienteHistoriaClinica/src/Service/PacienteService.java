@@ -40,42 +40,41 @@ public class PacienteService implements GenericService<Paciente> {
     
     // Insertar (Paciente + HistoriaClinica en transacción)
  
-    @Override
-    public void insertar(Paciente paciente) throws Exception {
+    // Archivo: PacienteService.java
 
-        if (paciente == null)
-            throw new IllegalArgumentException("Paciente no puede ser null");
+@Override
+public void insertar(Paciente paciente) throws Exception {
 
-        if (paciente.getHistoriaClinica() == null)
-            throw new IllegalArgumentException("Debe incluir una Historia Clínica");
+    if (paciente == null)
+        throw new IllegalArgumentException("Paciente no puede ser null");
 
-        validarPaciente(paciente);
+    if (paciente.getHistoriaClinica() == null)
+        throw new IllegalArgumentException("Debe incluir una Historia Clínica");
 
-        Connection conn = DatabaseConnection.getConnection();
-        conn.setAutoCommit(false); // inicia transacción
+    validarPaciente(paciente);
 
-        try {
-            // 1) Crear PACIENTE primero 
-            pacienteDao.crear(paciente, conn);
+    Connection conn = DatabaseConnection.getConnection();
+    conn.setAutoCommit(false); // inicia transacción
 
-            // 2) Crear HISTORIA CLÍNICA asociada
-            historiaDao.crear(
-                    paciente.getHistoriaClinica(),
-                    conn,
-                    paciente.getId() // acá va el id del paciente ya definido
-            );
+    try {
+        // 1) Crear PACIENTE (ESTA ÚNICA LLAMADA YA INCLUYE LA LÓGICA DE CREAR/ACTUALIZAR LA FICHA)
+        pacienteDao.crear(paciente, conn);
 
-            conn.commit();
+        // ¡ELIMINAMOS EL BLOQUE DE CÓDIGO QUE LLAMABA DIRECTAMENTE A historiaDao.crear()!
+        // Ese código era redundante y causaba el segundo INSERT, generando el error.
 
-        } catch (Exception ex) {
-            conn.rollback();
-            throw ex;
+        conn.commit();
 
-        } finally {
-            conn.setAutoCommit(true);
-            conn.close();
-        }
+    } catch (Exception ex) {
+        conn.rollback();
+        throw ex;
+
+    } finally {
+        conn.setAutoCommit(true);
+        conn.close();
     }
+}
+
 
     // Get by Id
     

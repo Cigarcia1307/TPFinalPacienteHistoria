@@ -13,6 +13,8 @@ Consultar, listar, modificar y eliminar lógicamente los registros.
 Mantener la integridad entre paciente e historia clínica mediante reglas de negocio y transacciones.
 
 Persistencia completa con JDBC + DAO + MySQL.
+
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Requisitos
 Requisitos de software
@@ -26,6 +28,7 @@ JDBC Driver MySQL (Connector/J)
 NetBeans, IntelliJ o cualquier IDE compatible con Maven/Ant
 
 MySQL Workbench / consola MySQL
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Pasos para crear la base de datos
 
@@ -70,8 +73,9 @@ Los grupos sanguíneos del enum
 Pacientes de ejemplo
 
 Historias clínicas temporales
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-ómo compilar y ejecutar
+Cómo compilar y ejecutar
 1. Configurar credenciales de MySQL
 
 En config/DatabaseConnection.java modificar:
@@ -112,6 +116,7 @@ Actualizar datos de paciente o historia clínica.
 Eliminar lógicamente un registro.
 
 Todas las operaciones compuestas (crear paciente + historia clínica) se manejan en servicios transaccionales con commit/rollback.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Credenciales de prueba
 
